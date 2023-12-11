@@ -33,7 +33,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     name: Deploy ${{ github.event.client_payload.vendor }}/${{ github.event.client_payload.name }}
-    needs: render
+    needs: render-documentation
     steps:
       - uses: actions/download-artifact@v3
         with:
