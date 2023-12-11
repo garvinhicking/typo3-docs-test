@@ -6,13 +6,13 @@ on:
 jobs:
   render-documentation:
     runs-on: ubuntu-latest
-    name: render-documentation ${{ GITHUB_REPOSITORY }}
+    name: render-documentation $GITHUB_REPOSITORY
     steps:
       - name: Render Repository
         uses: TYPO3-Documentation/gh-render-action@main
         id: rendering
         with:
-          repository_url: https://github.com/${{ GITHUB_REPOSITORY }}
+          repository_url: https://github.com/$GITHUB_REPOSITORY
           source_branch: main
           target_branch_directory: main
 
