@@ -6,13 +6,13 @@ on:
 jobs:
   render-documentation:
     runs-on: ubuntu-latest
-    name: render-documentation ${{ github.event.client_payload.vendor }}/${{ github.event.client_payload.name }}
+    name: render-documentation ${{ GITHUB_REPOSITORY }}
     steps:
       - name: Render Repository
         uses: TYPO3-Documentation/gh-render-action@main
         id: rendering
         with:
-          repository_url: https://github.com/$GITHUB_REPOSITORY
+          repository_url: https://github.com/${{ GITHUB_REPOSITORY }}
           source_branch: main
           target_branch_directory: main
 
@@ -32,7 +32,7 @@ jobs:
   
   deploy:
     runs-on: ubuntu-latest
-    name: Deploy ${{ github.event.client_payload.vendor }}/${{ github.event.client_payload.name }}
+    name: Deploy
     needs: render-documentation
     steps:
       - uses: actions/download-artifact@v3
@@ -52,4 +52,4 @@ jobs:
           rm: true
           strip_components: 1
           tar_tmp_path: ${{ secrets.TMP_TARGET_PATH }}
-          target: ${{ secrets.TARGET_PATH }}/${{ github.event.client_payload.type_short }}/${{ github.event.client_payload.vendor }}/${{ github.event.client_payload.name }}/${{ github.event.client_payload.target_branch_directory }}
+          target: ${{ secrets.TARGET_PATH }}/render/main
