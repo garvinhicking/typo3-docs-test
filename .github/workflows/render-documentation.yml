@@ -12,9 +12,9 @@ jobs:
         uses: TYPO3-Documentation/gh-render-action@main
         id: rendering
         with:
-          repository_url: ${{ github.event.client_payload.repository_url }}
-          source_branch: ${{ github.event.client_payload.source_branch }}
-          target_branch_directory: ${{ github.event.client_payload.target_branch_directory }}
+          repository_url: https://github.com/$GITHUB_REPOSITORY
+          source_branch: main
+          target_branch_directory: main
 
       - name: Archive render result
         run: |
