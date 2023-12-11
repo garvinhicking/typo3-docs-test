@@ -9,7 +9,7 @@ jobs:
     name: render-documentation $GITHUB_REPOSITORY
     steps:
       - name: Render Repository
-        uses: TYPO3-Documentation/gh-render-action@main
+        uses: garvinhicking/gh-render-action@main
         id: rendering
         with:
           repository_url: https://github.com/$GITHUB_REPOSITORY
