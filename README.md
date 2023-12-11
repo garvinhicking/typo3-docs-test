@@ -1,2 +1,4 @@
 # typo3-docs-test
-Dummy repository to test rendering with
+
+Dummy repository to test rendering with.
+
