@@ -1,7 +1,7 @@
 name: render-documentation
 on:
   push:
-    types: [ 'render-documentation' ]
+    branches: [ main ]
 
 jobs:
   render-documentation:
