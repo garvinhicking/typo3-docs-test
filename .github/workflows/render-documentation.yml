@@ -6,7 +6,7 @@ on:
 jobs:
   render-documentation:
     runs-on: ubuntu-latest
-    name: render-documentation $GITHUB_REPOSITORY
+    name: "render-documentation $GITHUB_REPOSITORY ${{ GITHUB_REPOSITORY }}"
     steps:
       - name: Render Repository
         uses: garvinhicking/gh-render-action@main
