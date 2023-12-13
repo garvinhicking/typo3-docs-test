@@ -9,7 +9,7 @@ jobs:
     name: "Render Documentation for this repository and upload"
     steps:
       - name: Render Repository
-        uses: garvinhicking/gh-render-action@stable
+        uses: TYPO3-Documentation/gh-render-action@main
         id: rendering
         with:
           repository_url: https://github.com/$GITHUB_REPOSITORY
@@ -52,4 +52,4 @@ jobs:
           rm: true
           strip_components: 1
           tar_tmp_path: ${{ secrets.TMP_TARGET_PATH }}
-          target: ${{ secrets.TARGET_PATH }}/render/main
+          target: ${{ secrets.TARGET_PATH }}/render/20231213
