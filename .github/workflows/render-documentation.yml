@@ -9,7 +9,7 @@ jobs:
     name: "render-documentation $GITHUB_REPOSITORY ${{ GITHUB_REPOSITORY }}"
     steps:
       - name: Render Repository
-        uses: garvinhicking/gh-render-action@main
+        uses: garvinhicking/gh-render-action@stable
         id: rendering
         with:
           repository_url: https://github.com/$GITHUB_REPOSITORY
